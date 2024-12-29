@@ -2,6 +2,7 @@ package dev.satadru.runnerz;
 
 import dev.satadru.runnerz.run.Location;
 import dev.satadru.runnerz.run.Run;
+import dev.satadru.runnerz.run.RunRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -24,11 +25,12 @@ public class RunnerzApplication {
 //		log.info("Something has changed in the application!");
 	}
 
-	@Bean
-	CommandLineRunner runner(ConfigurableApplicationContext ctx) {
-		return args -> {
-			Run run = new Run(1, "First Run", LocalDateTime.now(), LocalDateTime.now().plusHours(1), 5, Location.OUTDOOR);
-			log.info("Run: {}", run);
-		};
-	}
+//	@Bean
+//	CommandLineRunner runner(RunRepository runRepository) {
+//		return args -> {
+//			Run run = new Run(1, "First Run", LocalDateTime.now(), LocalDateTime.now().plusHours(1), 5, Location.OUTDOOR);
+//			runRepository.create(run);
+//			log.info("Run: {}", run);
+//		};
+//	}
 }
